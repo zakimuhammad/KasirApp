@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_kasir"
+    app:startDestination="@id/kasirFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.zaki.kasirapp.ui.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="riwayat"
+            app:argType="com.zaki.kasirapp.model.Penjualan" />
+    </fragment>
+    <fragment
+        android:id="@+id/kasirFragment"
+        android:name="com.zaki.kasirapp.ui.KasirFragment"
+        android:label="fragment_kasir"
+        tools:layout="@layout/fragment_kasir" >
+        <action
+            android:id="@+id/action_kasirFragment_to_previewFragment"
+            app:destination="@id/previewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.zaki.kasirapp.ui.PreviewFragment"
+        android:label="fragment_preview"
+        tools:layout="@layout/fragment_preview" />
+    <fragment
+        android:id="@+id/riwayatFragment"
+        android:name="com.zaki.kasirapp.ui.RiwayatFragment"
+        android:label="fragment_riwayat"
+        tools:layout="@layout/fragment_riwayat" >
+        <action
+            android:id="@+id/action_riwayatFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
